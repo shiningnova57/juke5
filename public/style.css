@@ -37,7 +37,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 56px;
+  height: 76px;
   border-top: 1px solid #222;
   border-bottom: 1px solid #222;
   padding: 8px; }
@@ -56,5 +56,14 @@ footer {
   cursor: pointer; }
 
 tr[double-click]:hover {
-  background-color: #444; }
+  background-color: #444; 
+}
+
+#songname {
+  height: 15px;
+  margin-bottom: 10px;
+}
+
+
+
 

@@ -2,6 +2,7 @@
   <h3>{{ playlist.name }}</h3>
   <song-list songs="playlist.songs"></song-list>
   <small ng-hide="playlist.songs.length">No songs.</small>
+  <button ng-hide="!updated" class="btn btn-warning" ng-click="saveplaylist()">Save Playlist Order</button>
   <hr>
   <div ng-controller="SongChooseCtrl" class="well">
     <form class="form-horizontal" novalidate name="songSelect" ng-submit="addIt()">
@@ -20,5 +21,6 @@
         </div>
       </fieldset>
     </form>
+<button class="btn btn-warning" ng-click="saveplaylist()">Save Playlist Order</button>
   </div>
 </div>

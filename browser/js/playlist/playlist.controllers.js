@@ -33,7 +33,7 @@ juke.controller('PlaylistsCtrl', function ($scope, PlaylistFactory) {
 // Single-playlist view
 
 juke.controller('PlaylistCtrl', function ($scope, thePlaylist, PlaylistFactory, PlayerFactory) {
-
+  $scope.updated = PlaylistFactory.updated;
   $scope.playlist = thePlaylist;
 
   $scope.addSong = function (song) {
@@ -43,6 +43,17 @@ juke.controller('PlaylistCtrl', function ($scope, thePlaylist, PlaylistFactory, 
       return addedSong;
     });
   };
+
+  $scope.saveplaylist = function () {
+    console.log($scope);
+    var songlistwithids = $scope.playlist.songs.map(function(each) {
+      return each._id;
+    })
+    PlaylistFactory.updatePlaylist($scope.playlist._id, songlistwithids)
+    .then(function(res) {
+      $scope.playlist = res.data;
+    })
+  }
 
   // $scope.toggle = function (song) {
   //   if (song !== PlayerFactory.getCurrentSong()) {

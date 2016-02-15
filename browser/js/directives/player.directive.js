@@ -7,3 +7,11 @@ juke.directive('footer', function() {
 		}
 	}
 })
+
+juke.directive('songName', function() {
+	return {
+		restrict: "E",
+		template: '<div id= "songname">{{getCurrentSong().name}}</div>'
+
+	}
+})

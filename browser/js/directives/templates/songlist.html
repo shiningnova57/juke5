@@ -7,7 +7,7 @@
         <th>Genres</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody ui-sortable="sortableTest" ng-model="songs">
       <tr ng-repeat="song in songs" double-click="toggle(song)" ng-class="{active: song === getCurrentSong() }">
         <td>
           <!-- <button class="btn btn-default btn-xs" ng-click="toggle(song)">

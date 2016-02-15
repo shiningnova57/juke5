@@ -1,4 +1,4 @@
-juke.directive('songList', function(PlayerFactory) {
+juke.directive('songList', function (PlayerFactory, PlaylistFactory) {
 	return {
 		restrict: "E",
 		templateUrl: '/js/directives/templates/songlist.html',
@@ -23,7 +23,14 @@ juke.directive('songList', function(PlayerFactory) {
 				} else {
 					PlayerFactory.resume();
 				}
-			};
+			}
+
+			scope.sortableTest = {
+			    stop: function(event) {
+			      console.log('updated')
+			      PlaylistFactory.update();
+			    }
+  			}
 		}
 	}
 });

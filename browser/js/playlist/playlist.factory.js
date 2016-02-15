@@ -44,6 +44,17 @@ juke.factory('PlaylistFactory', function ($http, SongFactory) {
     .then(SongFactory.convert);
   };
 
+  PlaylistFactory.updatePlaylist = function (id,songList) {
+    return $http.put('/api/playlists/' + id, {songs: songList})
+    .then(function (res) {
+      return res;
+    })
+  }
+
+  PlaylistFactory.update = function() {
+    PlaylistFactory.updated ? PlaylistFactory.updated = true : PlaylistFactory.updated = false;
+  }
+
   return PlaylistFactory;
 
 });
